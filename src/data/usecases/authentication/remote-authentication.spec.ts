@@ -1,4 +1,4 @@
-import { HttpPostClientSpy } from '../../test/mock-http-client'
+import { HttpPostClientSpy } from '@/data/test/mock-http-client'
 import { RemoteAuthentication } from './remote-authentication'
 
 type SutTypes = {

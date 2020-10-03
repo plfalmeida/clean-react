@@ -25,6 +25,12 @@
 
     .submit {
       margin-top: 32px;
+
+      &:disabled {
+        color: disabledBackground;
+        background-color: disabledColor;
+        pointer-events: none;
+      }
     }
 
     .link {

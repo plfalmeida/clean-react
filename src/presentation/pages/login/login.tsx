@@ -1,4 +1,4 @@
-import React, { useState } from 'React'
+import React, { useState } from 'react'
 import Styles from './login-styles.scss'
 import { LoginHeader, Footer, Input, FormStatus } from '@/presentation/components'
 import Context from '@/presentation/contexts/form/form-context'
@@ -9,7 +9,7 @@ type StateProps = {
 }
 
 const Login: React.FC = () => {
-  const [state] = useState<StateProps>({
+  const [state, setState] = useState<StateProps>({
     isLoading: false,
     errorMessage: ''
   })

@@ -7,7 +7,7 @@ import {
   FormStatus
 } from '@/presentation/components'
 import Context from '@/presentation/contexts/form/form-context'
-import { Validation } from '@/presentation/protocols/validation'
+import { Validation } from '@/presentation/protocols'
 
 type Props = {
   validation: Validation

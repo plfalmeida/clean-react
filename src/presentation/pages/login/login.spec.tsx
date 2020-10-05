@@ -18,5 +18,6 @@ describe('Login Component', () => {
 
     const passwordStatus = getByTestId('password-status')
     expect(passwordStatus.title).toBe('Campo obrigatório')
+    expect(passwordStatus.textContent).toBe('🔴')
   })
 })

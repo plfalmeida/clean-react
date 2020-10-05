@@ -1,5 +1,10 @@
 import React from 'react'
-import { render, RenderResult, fireEvent, cleanup } from '@testing-library/react'
+import {
+  render,
+  RenderResult,
+  fireEvent,
+  cleanup
+} from '@testing-library/react'
 import { ValidationStub } from '@/presentation/test'
 import Login from './login'
 import faker from 'faker'
@@ -7,7 +12,7 @@ import faker from 'faker'
 type SutTypes = {
   sut: RenderResult
   validationStub: ValidationStub
-}
+};
 
 const makeSut = (): SutTypes => {
   const validationStub = new ValidationStub()
@@ -58,9 +63,23 @@ describe('Login Component', () => {
     const passwordInput = sut.getByTestId('password')
     const passwordStatus = sut.getByTestId('password-status')
 
-    fireEvent.input(passwordInput, { target: { value: faker.internet.password() } })
+    fireEvent.input(passwordInput, {
+      target: { value: faker.internet.password() }
+    })
     expect(passwordStatus.title).toBe(validationStub.errorMessage)
     expect(passwordStatus.textContent).toBe('🔴')
+  })
+
+  test('Should show valid email state if Validation succeeds', () => {
+    const { sut, validationStub } = makeSut()
+    validationStub.errorMessage = null
+
+    const emailInput = sut.getByTestId('email')
+    const emailStatus = sut.getByTestId('email-status')
+
+    fireEvent.input(emailInput, { target: { value: faker.internet.email() } })
+    expect(emailStatus.title).toBe('Tudo certo')
+    expect(emailStatus.textContent).toBe('🟢')
   })
 
   test('Should show valid password state if Validation succeeds', () => {
@@ -70,7 +89,9 @@ describe('Login Component', () => {
     const passwordInput = sut.getByTestId('password')
     const passwordStatus = sut.getByTestId('password-status')
 
-    fireEvent.input(passwordInput, { target: { value: faker.internet.password() } })
+    fireEvent.input(passwordInput, {
+      target: { value: faker.internet.password() }
+    })
     expect(passwordStatus.title).toBe('Tudo certo')
     expect(passwordStatus.textContent).toBe('🟢')
   })

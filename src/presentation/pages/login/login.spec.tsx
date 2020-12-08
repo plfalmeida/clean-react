@@ -8,7 +8,7 @@ import {
 } from '@testing-library/react'
 import 'jest-localstorage-mock'
 import { ValidationStub, AuthenticationSpy } from '@/presentation/test'
-import Login from './login'
+import { Login } from '@/presentation/pages'
 import faker from 'faker'
 import { InvalidCredentialsError } from '@/domain/errors'
 import { Router } from 'react-router-dom'

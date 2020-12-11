@@ -14,7 +14,7 @@ import Styles from './login-styles.scss'
 type Props = {
   validation: Validation
   authentication: Authentication
-};
+}
 
 const Login: React.FC<Props> = ({ validation, authentication }: Props) => {
   const history = useHistory()

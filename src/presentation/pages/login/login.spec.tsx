@@ -17,11 +17,11 @@ import { createMemoryHistory } from 'history'
 type SutTypes = {
   sut: RenderResult
   authenticationSpy: AuthenticationSpy
-};
+}
 
 type SutParams = {
   validationError: string
-};
+}
 
 const history = createMemoryHistory({ initialEntries: ['/login'] })
 

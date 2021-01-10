@@ -35,4 +35,10 @@ button {
   &:hover {
     opacity: 0.9;
   }
+  
+  &:disabled {
+    color: disabledBackground;
+    background-color: disabledColor;
+    pointer-events: none;
+  }
 }

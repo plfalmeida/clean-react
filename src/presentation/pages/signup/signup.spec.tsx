@@ -50,11 +50,6 @@ const simulateValidSubmit = async (
   await waitFor(() => form)
 }
 
-const testElementText = (sut: RenderResult, fieldName: string, text: string): void => {
-  const el = sut.getByTestId(fieldName)
-  expect(el.textContent).toBe(text)
-}
-
 describe('SignUp Component', () => {
   afterEach(cleanup)
 
@@ -189,7 +184,7 @@ describe('SignUp Component', () => {
 
     await simulateValidSubmit(sut)
 
-    testElementText(sut, 'main-error', error.message)
+    Helper.testElementText(sut, 'main-error', error.message)
     Helper.testChildCount(sut, 'error-wrap', 1)
   })
 })

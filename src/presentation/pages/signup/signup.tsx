@@ -22,13 +22,19 @@ const SignUp: React.FC<Props> = ({ validation, addAccount }: Props) => {
     nameError: '',
     emailError: '',
     passwordError: '',
-    passwordConfirmationError: 'Campo obrigatório',
+    passwordConfirmationError: '',
     mainError: ''
   })
 
   const handleSubmit = async (event: React.FocusEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault()
-    if (state.isLoading) {
+    if (
+      state.isLoading ||
+      state.nameError ||
+      state.emailError ||
+      state.passwordError ||
+      state.passwordConfirmationError
+    ) {
       return
     }
     setState({ ...state, isLoading: true })

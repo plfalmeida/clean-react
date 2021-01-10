@@ -150,7 +150,7 @@ describe('Login Component', () => {
 
     jest
       .spyOn(authenticationSpy, 'auth')
-      .mockReturnValueOnce(Promise.reject(error))
+      .mockRejectedValueOnce(error)
 
     await simulateValidSubmit(sut)
 

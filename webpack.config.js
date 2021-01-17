@@ -39,8 +39,10 @@ module.exports = {
     historyApiFallback: true
   },
   externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM'
+    // react: 'React',
+    // 'react-dom': 'ReactDOM',
+    // React: 'React',
+    // ReactDom: 'ReactDOM'
   },
   plugins: [
     new CleanWebpackPlugin(),

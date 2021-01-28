@@ -4,6 +4,14 @@ describe('Login', () => {
   })
 
   it('Should load with correct initial state', () => {
-    cy.get('[data-testid="email-status"]').should('have.attr', 'title', 'Campo obrigatório')
+    cy.getByTestId('email-status')
+      .should('have.attr', 'title', 'Campo obrigatório')
+      .should('contain.text', '🔴')
+
+    cy.getByTestId('password-status')
+      .should('have.attr', 'title', 'Campo obrigatório')
+      .should('contain.text', '🔴')
+    cy.getByTestId('submit').should('have.attr', 'disabled')
+    cy.getByTestId('error-wrap').should('not.have.descendants')
   })
 })

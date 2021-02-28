@@ -74,7 +74,7 @@ describe('Login', () => {
     FormHelper.testUrl('/login')
   })
 
-  it('Should save accessToken error if valid credentials are provided', () => {
+  it('Should save accessToken if valid credentials are provided', () => {
     Http.mockOk()
 
     simulateValidSubmit()
